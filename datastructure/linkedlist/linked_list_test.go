@@ -5,7 +5,7 @@ import (
 )
 
 func TestLinkedList(t *testing.T) {
-	a := NewLinkedLisA()
+	a := NewLinkedListB()
 	a.AddAtIndex(3, 1)
 	a.AddAtIndex(0, 2)
 	a.AddAtIndex(0, 3)

@@ -57,30 +57,30 @@ func (l *LinkedListA) AddAtHead(val int) {
 
 func (l *LinkedListA) AddAtTail(val int) {
 	newNode := &Node{Val: val}
-	node := l.findLastNode()
-	node.Next = newNode
+	prevNode := l.findLastNode()
+	prevNode.Next = newNode
 }
 
 func (l *LinkedListA) AddAtIndex(index, val int) {
-	node := l.findNodeAtIndex(index - 1)
+	prevNode := l.findNodeAtIndex(index - 1)
 
-	if node == nil {
+	if prevNode == nil {
 		return
 	}
 
 	newNode := &Node{Val: val}
 	// insert the node
-	tmpNode := node.Next
-	node.Next = newNode
+	tmpNode := prevNode.Next
+	prevNode.Next = newNode
 	newNode.Next = tmpNode
 
 }
 
 func (l *LinkedListA) DeleteAtIndex(index int) {
-	node := l.findNodeAtIndex(index - 1)
+	prevNode := l.findNodeAtIndex(index - 1)
 
 	// delete the node
-	if node != nil && node.Next != nil {
-		node.Next = node.Next.Next
+	if prevNode != nil && prevNode.Next != nil {
+		prevNode.Next = prevNode.Next.Next
 	}
 }
