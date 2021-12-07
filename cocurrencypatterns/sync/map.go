@@ -7,12 +7,12 @@ import (
 
 var m *sync.Map
 
-func NewSyncMap(){
+func NewSyncMap() {
 	m = new(sync.Map)
-	m.Store("a","b")
-	c,_ := m.Load("a")
+	m.Store("a", "b")
+	c, _ := m.Load("a")
 	m.LoadAndDelete("a")
 	m.LoadOrStore()
-	fmt.Println( c.(string))
+	fmt.Println(c.(string))
 	//m.LoadAndDelete()
 }

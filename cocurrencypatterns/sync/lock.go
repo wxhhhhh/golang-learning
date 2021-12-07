@@ -2,7 +2,6 @@ package main
 
 import "sync"
 
-
 type Obj struct {
 	m sync.Locker
 }
